@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Pages\Doctors\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="Clients\" />
+    <None Remove="SampleApp.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Pages\Doctors\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoctorApi\DoctorApi.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Data\DoctorContext.cs" />
+    <Compile Remove="Migrations\20220624224144_doctors.cs" />
+    <Compile Remove="Migrations\20220624224144_doctors.Designer.cs" />
+    <Compile Remove="Migrations\20220625001931_AddLicense.cs" />
+    <Compile Remove="Migrations\20220625001931_AddLicense.Designer.cs" />
+    <Compile Remove="Migrations\DoctorContextModelSnapshot.cs" />
+    <Compile Remove="Pages\Doctors\Create.cshtml.cs" />
+    <Compile Remove="Pages\Doctors\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Doctors\Details.cshtml.cs" />
+    <Compile Remove="Pages\Doctors\Edit.cshtml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\Doctors\Create.cshtml" />
+    <Content Remove="Pages\Doctors\Delete.cshtml" />
+    <Content Remove="Pages\Doctors\Details.cshtml" />
+    <Content Remove="Pages\Doctors\Edit.cshtml" />
+  </ItemGroup>
+</Project>
