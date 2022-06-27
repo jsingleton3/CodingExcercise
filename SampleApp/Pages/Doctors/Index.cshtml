@@ -14,7 +14,7 @@
     <a asp-page="Create">Create New</a>
 </p>
 -->
-
+<!--
 <table class="table">
     <thead>
         <tr>
@@ -24,6 +24,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Doctors[0].LastName)
             </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -46,3 +47,35 @@
         }
     </tbody>
 </table>
+    -->
+
+@foreach (var item in Model.Doctors)
+{
+    <div class="card border-primary mb-3">
+        <div class="card-heading">
+            <h3 class="card-title">@item.FullName</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xs-4 col-md-3 hidden-lg">@Html.DisplayNameFor(model => model.Doctors[0].Specialty)</div>
+                <div class="col-xs-8 col-md-9 hidden-xs">@item.Specialty</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-3">@Html.DisplayNameFor(model => model.Doctors[0].PhoneNumber)</div>
+                <div class="col-xs-8 col-md-9">@item.PhoneNumber</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-3">@Html.DisplayNameFor(model => model.Doctors[0].IsAcceptingNewPatients)</div>
+                <div class="col-xs-8 col-md-9">@item.IsAcceptingNewPatients</div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-md btn-primary" disabled>Schedule an Appointment</button>
+                    <button type="button" class="btn btn-md btn-primary" disabled>Send a Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
